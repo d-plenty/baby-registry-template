@@ -1833,24 +1833,34 @@ function renderHero() {
 
 function renderInfo() {
   $("#parcel-label").innerHTML = `<strong>${esc(CONFIG.parcelName)}</strong>` + CONFIG.addressLines.map(l => `<span>${esc(l)}</span>`).join("");
-  const [y, m, d] = CONFIG.openingDate.split("-").map(Number);
+  const hasDate = /^\d{4}-\d{2}-\d{2}$/.test(CONFIG.openingDate || "");
+  const [y, m, d] = hasDate ? CONFIG.openingDate.split("-").map(Number) : [ 0, 0, 0 ];
   const day = new Date(y, m - 1, d);
-  $("#cal-m").textContent = day.toLocaleDateString("en-AU", {
-    month: "short"
-  });
-  $("#cal-d").textContent = d;
-  $("#cal-y").textContent = y;
-  $("#open-when").textContent = day.toLocaleDateString("en-AU", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
-  $("#how-date").textContent = $("#open-when").textContent;
-  const today = new Date;
-  today.setHours(0, 0, 0, 0);
-  const days = Math.round((day - today) / 864e5);
-  $("#countdown").textContent = days > 1 ? `${days} days to go` : days === 1 ? "Tomorrow!" : days === 0 ? "It's today! Join the live stream." : "Thanks for watching along 💛";
+  if (!hasDate) {
+    $("#cal-m").textContent = "MMM";
+    $("#cal-d").textContent = "DD";
+    $("#cal-y").textContent = "YYYY";
+    $("#open-when").textContent = "[Your unwrapping day]";
+    $("#how-date").textContent = "dd/mm/yyyy";
+    $("#countdown").textContent = "Set the date in registry.json";
+  } else {
+    $("#cal-m").textContent = day.toLocaleDateString("en-AU", {
+      month: "short"
+    });
+    $("#cal-d").textContent = d;
+    $("#cal-y").textContent = y;
+    $("#open-when").textContent = day.toLocaleDateString("en-AU", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+    $("#how-date").textContent = $("#open-when").textContent;
+    const today = new Date;
+    today.setHours(0, 0, 0, 0);
+    const days = Math.round((day - today) / 864e5);
+    $("#countdown").textContent = days > 1 ? `${days} days to go` : days === 1 ? "Tomorrow!" : days === 0 ? "It's today! Join the live stream." : "Thanks for watching along 💛";
+  }
   $("#fb-link").href = CONFIG.facebookGroupUrl || "#";
   $("#fb-link").hidden = !CONFIG.facebookGroupUrl;
   $("#fb-join").hidden = !CONFIG.facebookGroupUrl;
@@ -3476,7 +3486,7 @@ const Game = (() => {
     $("#play-who").hidden = known;
     $("#play-as").hidden = !known;
     $("#play-as-name").textContent = shownName(player);
-    if (!known) $("#play-name").value = player || "";
+    if (editing) $("#play-name").value = player || ""; else if (!known && !$("#play-name").value) $("#play-name").value = player || "";
     if (editing) {
       $("#play-top3").hidden = true;
       $("#play-saved").hidden = true;
@@ -4499,7 +4509,7 @@ function keepsakeHtml() {
   const totalBought = ITEMS.reduce((sum, i) => sum + bought(i), 0) + EXTRAS.length;
   const givers = new Set([ ...ITEMS.flatMap(i => i.purchases.map(p => p.name || "")), ...EXTRAS.map(x => x.name || "") ]).size;
   const cats = Object.keys(CATEGORIES).filter(k => ITEMS.some(i => i.category === k));
-  pages.push(`<section class="ks-page">\n    ${head("🎁", "Gift registry", totalBought ? `${ITEMS.length} gifts on the list. ${totalBought} ${totalBought === 1 ? "gift" : "gifts"} bought by ${givers} ${givers === 1 ? "person" : "people"}. Thank you all! 💛` : `${ITEMS.length} gifts on the list, just as it looked when it went live. Nothing bought yet!`)}\n    <div class="ks-info">\n      <div><strong>📦 Shipped to</strong><br>${esc(CONFIG.parcelName)}<br>${CONFIG.addressLines.map(esc).join("<br>")}</div>\n      <div><strong>🎥 Unwrapping day</strong><br>${esc(longDate(parseDate(CONFIG.openingDate)))}<br>Opened live on Facebook</div>\n    </div>\n    ${cats.map(k => {
+  pages.push(`<section class="ks-page">\n    ${head("🎁", "Gift registry", totalBought ? `${ITEMS.length} gifts on the list. ${totalBought} ${totalBought === 1 ? "gift" : "gifts"} bought by ${givers} ${givers === 1 ? "person" : "people"}. Thank you all! 💛` : `${ITEMS.length} gifts on the list, just as it looked when it went live. Nothing bought yet!`)}\n    <div class="ks-info">\n      <div><strong>📦 Shipped to</strong><br>${esc(CONFIG.parcelName)}<br>${CONFIG.addressLines.map(esc).join("<br>")}</div>\n      <div><strong>🎥 Unwrapping day</strong><br>${/^\d{4}-\d{2}-\d{2}$/.test(CONFIG.openingDate || "") ? esc(longDate(parseDate(CONFIG.openingDate))) : "dd/mm/yyyy"}<br>Opened live on Facebook</div>\n    </div>\n    ${cats.map(k => {
     const cat = CATEGORIES[k];
     return `<div class="ks-cat" style="${colourVars(cat.colour)}">\n        <h3 class="ks-cat-title">${esc(cat.label)}</h3>\n        <div class="ks-gifts">${ITEMS.filter(i => i.category === k).map(i => {
       const got = bought(i);

@@ -1,62 +1,211 @@
-# Baby Registry Template
+# Baby Registry
 
-A self-hosted, private baby registry website for family and friends. It has a gift list where guests mark what they've bought so nobody doubles up, guessing games with prizes and a live leaderboard, a mini game with a high score board, a charity donation log, a photo story page and a printable keepsake for the baby book.
+A simple, self-hosted baby registry you can customise and run yourself. No accounts, no third-party registry service, no tracking.
 
-It runs as one small Node.js server with no dependencies and keeps everything in a single JSON file on your own machine. There's no database, no accounts, no tracking and no third-party services.
+I built this for our own baby because I didn't want to put our details and gift list on a big commercial registry site. Our version is live for family and friends. This repo is a cleaned-up copy with all personal details swapped for placeholders, so anyone can use it.
 
-| How it works | Gift registry |
-|---|---|
-| ![How it works](docs/how-it-works.png) | ![Gift registry](docs/gift-registry.png) |
-| **Guessing games** | **Our story** |
-| ![Guessing games](docs/guessing-games.png) | ![Our story](docs/our-story.png) |
+**👀 Try the demo:** download [`demo.html`](demo.html) and open it in your browser. It's a single file with a made-up couple, real baby products, and pretend purchases, guesses and high scores from Mum, Dad, Nan, Auntie Kate and friends. The code is **123456**. Anything you do in the demo stays in your browser, and the **Reset demo** button at the top puts it back to the start.
+
+![Opening screen](docs/screenshots/01-opening-screen.png)
+
+---
+
+## What it's good for
+
+- **Online or long-distance baby showers.** Guests can see the list, pick a gift, buy it from any shop, and have it shipped to you.
+- **Stopping double-ups.** When a guest marks an item as bought, everyone else sees it straight away.
+- **Keeping it private.** The whole site sits behind a numeric access code, so only people you've given the code to can see it.
+- **Buying from any shop.** Items can link to a shop's product page if you want, but guests can buy from anywhere. No money ever goes through the registry.
+- **Owning your data.** It runs on your own hardware or server, not someone else's platform.
 
 ## Features
 
-- **Private:** guests enter a 4 to 10 digit code from your invite. Wrong guesses get locked out.
-- **Gift registry:** categories, search and filters. Guests tap "I bought this", pick how many and add their name (or a funny one, or stay anonymous). They can undo it from the same device, and there's a "Bought something else?" box for gifts that aren't on the list.
-- **Shipping details:** a copyable delivery address and an unwrapping-day countdown.
-- **Guessing games:** boy or girl, name, date, time, weight, length, hair and looks. Charts show everyone's guesses. Once you fill in the real answers, points, category winners and an overall leaderboard appear, with blue or pink fireworks when guesses are saved.
-- **Mini game:** "Baby's big drive", a five-lane play-rug driving game with a top 30 scoreboard. Playing it adds bonus points in the guessing games.
-- **Charity:** a donation log with a running total.
-- **Our story:** milestones and photo chapters shown as polaroids.
-- **Keepsake:** open `/#keepsake` for an A4 printable copy of everything.
-- **Easy to look after:** your data is saved safely and backed up every hour, and settings changes go live without a restart.
+**The registry**
+- Gift list with categories, search, and optional links to one or more shops per item
+- "I'll get this" so everyone can see what's been bought, with a thank-you message
+- Items like nappies, wipes, clothes and vouchers can be bought any number of times
+- "I bought something else" for gifts that aren't on the list
+- Optional "Ship to us" section with your postal address
+- Optional charity section for guests who'd rather donate
 
-## Quick start (Docker)
+**The fun bits**
+- Guessing games: boy or girl, name, birth date, time, weight, length, how much hair, hair colour and who the baby will look like, with live charts of everyone's guesses
+- Fireworks (pink or blue) when the guesses are revealed
+- A mini racing game with a high score table
+- Your story told in photo chapters (it ships with plain couple silhouettes you can keep or swap for your own photos)
+- A countdown to your unwrapping day, with an optional link to a Facebook group or live stream
+- A printable A4 keepsake page with all the guesses, winners and who bought what
 
-1. Copy this repo to your server, for example `/mnt/your-pool/baby-registry`.
-2. Edit `config/registry.json` and replace everything in `[square brackets]`: your names, the address, the charity, baby name options, the story text and your own `accessCode`.
-3. Swap the pictures in `config/photos/full` and `config/photos/thumb` for your own (keep the names, or update them under `"story"`).
-4. Update the folder paths and time zone in `compose.yaml`, then run:
+**Under the hood**
+- One small Node.js server with **no dependencies** to install
+- Guests' purchases, guesses and scores are saved to a single file, with hourly backups
+- Your settings and gift list are one file (`config/registry.json`) that reloads by itself when you save it
+- Access code lockout after too many wrong tries, signed cookies and a strict content security policy
+- Works well on phones
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Code screen](docs/screenshots/02-code-screen.png) | ![How it works](docs/screenshots/03-how-it-works.png) |
+| Enter the code | The home page |
+| ![How the registry works](docs/screenshots/04-how-the-registry-works.png) | ![Our story](docs/screenshots/05-our-story.png) |
+| How the registry works | Your story |
+| ![Gift registry](docs/screenshots/06-gift-registry.png) | ![Gift list](docs/screenshots/07-gift-list.png) |
+| The gift registry | The gift list |
+| ![Category filter](docs/screenshots/08-category-filter.png) | ![Search](docs/screenshots/09-search.png) |
+| Filter by category | Search |
+| ![Buy dialog](docs/screenshots/10-buy-dialog.png) | ![Thank you](docs/screenshots/11-thank-you.png) |
+| Marking a gift as bought | The thank-you message |
+| ![Bought something else](docs/screenshots/12-bought-something-else.png) | ![Ship to us](docs/screenshots/13-ship-to-us.png) |
+| Bought something not on the list | Ship to us |
+| ![Guessing games](docs/screenshots/14-guessing-games.png) | ![Guess charts](docs/screenshots/15-guess-charts.png) |
+| Guessing games | Everyone's guesses |
+| ![Date and time charts](docs/screenshots/16-date-and-time-charts.png) | ![Fireworks](docs/screenshots/17-fireworks.png) |
+| Birth date and time guesses | The big reveal |
+| ![Mini game start](docs/screenshots/18-mini-game-start.png) | ![Mini game playing](docs/screenshots/19-mini-game-playing.png) |
+| The mini game | Playing |
+| ![Mini game over](docs/screenshots/20-mini-game-over.png) | ![High scores](docs/screenshots/21-high-scores.png) |
+| Game over | High scores |
+| ![Charity](docs/screenshots/22-charity.png) | ![Keepsake](docs/screenshots/23-keepsake.png) |
+| Donate instead | The printable keepsake |
+
+![Keepsake gifts](docs/screenshots/24-keepsake-gifts.png)
+
+There's also an [example keepsake PDF](docs/keepsake-demo.pdf).
+
+### On a phone
+
+| | | |
+|---|---|---|
+| ![Phone opening](docs/screenshots/m1-opening-screen.png) | ![Phone home](docs/screenshots/m2-home.png) | ![Phone gift list](docs/screenshots/m3-gift-list.png) |
+| ![Phone guessing games](docs/screenshots/m4-guessing-games.png) | ![Phone mini game](docs/screenshots/m5-mini-game-full-screen.png) | ![Phone game over](docs/screenshots/m6-mini-game-over.png) |
+
+---
+
+## What's in the repo
 
 ```
-docker compose up -d
+app/          the website and the Node.js server (you normally don't need to touch this)
+config/       registry.json (your settings and gift list) and the photos
+compose.yaml  Docker Compose file to run it
+demo.html     the standalone demo
+docs/         EDITING.md, screenshots and the example keepsake
 ```
 
-5. Open `http://your-server:3480` and enter your code.
+## Getting started
 
-Put it behind HTTPS (for example a Cloudflare tunnel or a reverse proxy) before sharing the link.
+1. Clone or download this repo.
+2. Open **`config/registry.json`** in a text editor. Everything you need to change is in there:
+   - Your names, the baby's last name and the due date
+   - The access code (change it from `123456`!)
+   - Your unwrapping day (`openingDate`). Until you set it, the site shows `dd/mm/yyyy`
+   - Gift items, categories and optional shop links
+   - Shipping address and charity (both optional)
+   - Facebook group or live stream link (optional)
+   - Your story chapters and photo captions
+3. Swap the silhouette photos in `config/photos/` for your own (or keep them). Each photo has a `full` and a `thumb` copy with the same file name.
+4. Run it (see below).
 
-Without Docker, run it with Node.js 22 or newer:
+[`docs/EDITING.md`](docs/EDITING.md) has more detail on every setting.
 
+> ⚠️ **Privacy note:** If you fork this repo publicly, **don't commit your real address, access code or photos** to GitHub. Make your edits on the copy you host, not in your public fork. The `data/` folder (where guests' purchases and guesses are saved) is already in `.gitignore`.
+
+### Try it on your own computer first
+
+You need Docker or Podman. From inside the repo folder:
+
+```bash
+docker run --rm -p 3480:3000 \
+  -v "$PWD/app:/app:ro" -v "$PWD/config:/config:ro" -v "$PWD/data:/data" \
+  -e CONFIG_FILE=/config/registry.json -e DATA_DIR=/data \
+  -w /app node:22-alpine node server.js
 ```
-CONFIG_FILE=./config/registry.json DATA_DIR=./data PORT=3480 node app/server.js
+
+Then open <http://localhost:3480>. On Fedora or other SELinux systems, use `podman` instead of `docker` and add `:z` to each volume (for example `"$PWD/data:/data:z"`).
+
+If you have Node.js 22 installed, this works too:
+
+```bash
+mkdir -p data
+CONFIG_FILE=config/registry.json DATA_DIR=data PORT=3480 node app/server.js
 ```
 
-## Editing and backups
+> **Why not just open `index.html`?** The real site needs its small server to save purchases and guesses so every guest sees the same thing. Opening the HTML file on its own won't let you in. If you only want to look around, use `demo.html`, which fakes the server inside your browser.
 
-See [docs/EDITING.md](docs/EDITING.md) for changing the gift list, revealing the guessing game answers, removing an entry, photos and backups.
+---
 
-Everyone's purchases, guesses and scores live in `data/state.json`. It's never committed (see `.gitignore`), and hourly copies are kept in `data/backups`.
+## How I self-hosted it
+
+I run a small homelab, so I hosted the registry in a Docker container on my TrueNAS box and published it to the internet through a Cloudflare Tunnel. You don't need a setup like that. Anything that can run a Docker container (or Node.js) will work. Here's an outline of how I did it in case it's useful.
+
+### 1. Run it in Docker
+
+I manage my containers with [Dockge](https://github.com/louislam/dockge), but any way of running Docker Compose works.
+
+1. Make a folder on your server, for example `/mnt/your-pool/baby-registry`, and copy `app`, `config` and `compose.yaml` into it.
+2. Make an empty `data` folder next to them.
+3. In `compose.yaml`, change `/mnt/your-pool/baby-registry` to your folder and set `TZ` to your time zone.
+4. The container runs as user `568` (the TrueNAS "apps" user). Either give that user the folder, or change `user:` in `compose.yaml` to your own user's ID:
+   ```bash
+   sudo chown -R 568:568 /mnt/your-pool/baby-registry
+   ```
+5. Start it:
+   ```bash
+   docker compose up -d
+   ```
+
+The registry is now at `http://<your-server-ip>:3480`. The compose file uses the official `node:22-alpine` image, so there's nothing to build. The website code and settings are mounted read-only, and only the `data` folder can be written to.
+
+### 2. Make it reachable from the internet
+
+I used a **Cloudflare Tunnel** (`cloudflared`), so I didn't have to open any ports on my home router. The tunnel points a subdomain (for example `registry.yourdomain.com`) at `http://<your-server-ip>:3480`, and Cloudflare handles HTTPS automatically.
+
+Other options:
+- A reverse proxy such as Nginx Proxy Manager, Caddy or Traefik, with a domain and Let's Encrypt
+- Tailscale Funnel
+- A cheap VPS
+
+Set `siteAddress` in `registry.json` to your web address so it shows on the printed keepsake.
+
+### 3. Updating it without losing anything
+
+Once guests start marking items as bought, **update the registry in place. Don't redeploy it from scratch, and never delete the `data` folder.** Everything guests have done lives in `data/state.json` (with hourly backups in `data/backups/`).
+
+- **Changing settings or the gift list:** just edit `config/registry.json` and save. The site picks it up by itself, no restart needed.
+- **Updating the code:** stop the container, back up `data`, replace only `app` (and `config` if you want), then start it again:
+  ```bash
+  cd /mnt/your-pool/baby-registry
+  docker compose down
+  cp -a data "data-backup-$(date +%Y%m%d-%H%M)"
+  rm -rf app
+  # copy the new app folder in here
+  sudo chown -R 568:568 app
+  docker compose up -d
+  ```
+
+Removing an item from the gift list doesn't delete anyone's purchase, so it's safe to tidy the list as you go.
+
+---
+
+## Hosting without a server
+
+The full registry **can't run on GitHub Pages, Cloudflare Pages or Netlify** on their own, because those only serve static files and the registry needs its server to save purchases, guesses and scores for everyone.
+
+What you *can* put on a static host is `demo.html`. For example, turn on GitHub Pages for this repo and the demo will be at `https://<your-username>.github.io/<repo-name>/demo.html`.
+
+---
 
 ## Credits
 
-- Gift icons: [IconPark](https://github.com/bytedance/IconPark) by ByteDance, Apache License 2.0.
-- Placeholder silhouettes: [Material Design Icons](https://github.com/Templarian/MaterialDesign), Apache License 2.0.
-- Fonts: Fredoka and Nunito from Google Fonts (SIL Open Font License).
+- Icons from [IconPark](https://github.com/bytedance/IconPark) (Apache 2.0)
+- Silhouettes based on [Material Design Icons](https://github.com/google/material-design-icons) (Apache 2.0)
+- Products in the demo are real items from Australian shops, used only as examples. This project isn't connected to any of them.
+
+## Contributing
+
+Ideas, fixes and pull requests are welcome. If you use this for your own little one, I'd love to hear about it!
 
 ## Licence
 
-GPL-3.0. See [LICENSE](LICENSE).
-
-Made by Plenty Technologies.
+MIT. Free to use, modify and share. See [LICENSE](LICENSE).

@@ -1,6 +1,6 @@
 # How to edit it safely
 
-Everything lives in one folder on the NAS: `/mnt/your-pool/baby-registry`
+Everything lives in one folder on the NAS: your registry folder (for example `/mnt/your-pool/baby-registry`)
 
 | Folder    | What's in it                                          | Safe to edit?                                  |
 |-----------|-------------------------------------------------------|------------------------------------------------|

@@ -1,7 +1,7 @@
 {
   "_readme": [
     "PUBLIC TEMPLATE. Replace everything in [square brackets] with your own details, change \"accessCode\" to your own code (4 to 10 digits), and swap the photos in config/photos for your own.",
-    "Example dates are used throughout: set \"openingDate\" (unwrapping day) and the date game's \"due\", \"min\" and \"max\" to your own.",
+    "Set \"openingDate\" (your unwrapping day, like \"2027-05-01\"). Until then the site shows dd/mm/yyyy. Also set the date game's \"due\", \"min\" and \"max\".",
     "This file holds the site's settings and the gift list. Edit it any time; the site picks up changes within a few seconds.",
     "Keep the quotes, commas and brackets exactly as they are. If the file has a mistake, the site keeps using the last good version and logs the problem.",
     "NEVER change an item's \"id\" once people have started buying. Purchases are linked to the id. Everything else about an item can change.",
@@ -18,7 +18,7 @@
     "[Street address]",
     "[Suburb STATE Postcode]"
   ],
-  "openingDate": "2027-05-01",
+  "openingDate": "",
   "facebookGroupUrl": "",
   "charity": {
     "name": "[Charity name]",
