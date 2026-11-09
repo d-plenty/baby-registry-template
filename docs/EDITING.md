@@ -1,18 +1,46 @@
 # How to edit it safely
 
-Everything lives in one folder on the NAS: your registry folder (for example `/mnt/your-pool/baby-registry`)
+Everything lives in one folder on your server: your registry folder (for example `/mnt/your-pool/baby-registry`).
 
 | Folder    | What's in it                                          | Safe to edit?                                  |
 |-----------|-------------------------------------------------------|------------------------------------------------|
 | `config/` | `registry.json`: gift list, address, code, results, prizes | Yes, any time. The site reloads it within a few seconds. |
-| `app/`    | `server.js` and `public/baby-registry.html` (the website itself)   | Yes. Restart the stack in Dockge afterwards.   |
+| `app/`    | `server.js` and `public/index.html` (the website itself)   | Only when updating. Restart the stack afterwards.   |
 | `data/`   | `state.json` (everyone's purchases, guesses, donations, high scores), `backups/`, `secret.key` | Only with the stack stopped (see below). |
 
 Stopping, restarting, updating or even deleting the container never touches `data/`.
 
+## Your details
+
+All of these are near the top of `config/registry.json`:
+
+| Setting | What it does |
+|---|---|
+| `"accessCode"` | The code guests type to get in. 4 to 10 digits. |
+| `"parents"` | The line on the opening screen, like `"Sam & Alex are welcoming"`. |
+| `"blockWord"` | The word spelled out in toy blocks on the home page. Keep it short. |
+| `"babyName"` | The baby's last name, shown under the blocks. |
+| `"siteAddress"` | Your web address, like `baby.yourdomain.com`. Printed on the keepsake. |
+| `"currency"` | Shown next to prices and donations, like `"AUD"`. |
+| `"parcelName"`, `"addressLines"` | Who parcels go to and the address, shown on "Ship to us". |
+| `"openingDate"` | Your unwrapping day, like `"2027-05-01"`. Leave it as `""` to show `dd/mm/yyyy` until you know. |
+| `"facebookGroupUrl"` | See "Facebook page" below. |
+| `"charity"` | Name, description, website and donation link for the "Donate instead" section. |
+
+## Setting up the guessing games
+
+The games are under `"games"` in `registry.json`.
+
+- **Names:** in `boyName` and `girlName`, change each `"label"` to a name you're considering, like `"Oliver"`. Leave the `"v"` values as they are. Names with `"group": "Unisex"` show in both lists.
+- **Who baby looks like:** in `looks`, change `[Parent 1]` and `[Parent 2]` to your first names.
+- **Birth date:** in `date`, set `"due"` to your due date, and `"min"` and `"max"` to the earliest and latest dates people can pick. Also change `[due date]` in its `"hint"`.
+- **Titles and hints:** any `"title"` or `"hint"` can be reworded.
+
+Do this before guests start guessing. Changing a `"v"` value afterwards disconnects the guesses already made for it.
+
 ## Keepsake (printable copy for the baby book)
 
-Open `https://[your-site-address]/#keepsake` (after entering the code), then tap **Print or save as PDF**.
+Open `https://your-site-address/#keepsake` (after entering the code), then tap **Print or save as PDF**.
 Choose A4 and turn on "Background graphics". It fills itself in from whatever's on the site at the time, so print
 the final one after the unwrapping and once the results are filled in.
 
@@ -33,7 +61,7 @@ Rules that keep everyone's data linked up:
 - **New item:** copy an existing item, give it a new id (lowercase, no spaces, e.g. `"sleeping-bag"`).
 - **Removing an item** hides it and its purchases. Put it back with the same id and they come back.
 - **Raising `qty`** puts it back on "available". Lowering it below what's been bought just shows it as all bought.
-- **No limit:** use `"unlimited": true` instead of `"qty"` (like the vouchers, wipes and books). People can buy as many as
+- **No limit:** use `"unlimited": true` instead of `"qty"` (like vouchers, wipes and books). People can buy as many as
   they like, the card shows how many have been bought so far, and it doesn't count towards the progress bar.
 - **Changing the code** only affects new visitors. People already in stay in.
 - **Store links:** add them to an item's `"links"` list like this:
@@ -57,7 +85,7 @@ Fill in the matching line under `"results"` in `registry.json`, for example:
 ```
 "results": {
   "sex": "girl",
-  "name": "Grace",
+  "name": "Olivia",
   "date": "2027-03-04",
   "weight": 3.42,
   "length": 51,
@@ -69,7 +97,7 @@ Fill in the matching line under `"results"` in `registry.json`, for example:
 ```
 
 Text values go in quotes, numbers don't. Leave a game as `null` until you know it.
-For the name, fill in both `"sex"` and `"name"`. Write the name as it appears in the list (e.g. `"Grace"` or `"Sam"`).
+For the name, fill in both `"sex"` and `"name"`. Write the name exactly as it appears in your list (e.g. `"Olivia"`).
 The other sex's name list is then retired and doesn't count towards points.
 Once a game has an answer, guessing closes for it and its winner shows up.
 
@@ -116,5 +144,6 @@ To roll back by hand: stop the stack, copy the backup you want over `data/state.
 - **Adding a photo:** copy the same `.jpg` into both `photos/full` and `photos/thumb` (use a simple name like
   `first-cuddle.jpg`, no spaces), then add it to a chapter's `"photos"` list:
   `{ "file": "first-cuddle.jpg", "caption": "First cuddle" }`
+- Photos work best in portrait (4:5). The examples are 1200×1500 in `full` and 576×720 in `thumb`.
 - After copying files in, run: `sudo chown -R 568:568 /mnt/your-pool/baby-registry/config`
 - Photos can hide your location inside them. Remove location details before adding them.
