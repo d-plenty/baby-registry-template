@@ -4,7 +4,7 @@ A simple, self-hosted baby registry you can customise and run yourself. No accou
 
 I built this for our own baby because I didn't want to put our details and gift list on a big commercial registry site. Our version is live for family and friends. This repo is a cleaned-up copy with all personal details swapped for placeholders, so anyone can use it.
 
-**👀 Try the demo:** download [`demo.html`](demo.html) and open it in your browser. It's a single file with a made-up couple, real baby products, and pretend purchases, guesses and high scores from Mum, Dad, Nan, Auntie Kate and friends. The code is **123456**. Anything you do in the demo stays in your browser, and the **Reset demo** button at the top puts it back to the start.
+**👀 Try the demo:** download `baby-registry-demo.html` from the [latest release](../../releases/latest) (or [`demo.html`](demo.html) in this repo) and open it in your browser. It's a single file with a made-up couple, real baby products, and pretend purchases, guesses and high scores from Mum, Dad, Nan, Auntie Kate and friends. The code is **123456**. Anything you do in the demo stays in your browser, and the **Reset demo** button at the top puts it back to the start.
 
 ![Opening screen](docs/screenshots/01-opening-screen.png)
 
@@ -95,7 +95,7 @@ docs/         EDITING.md, screenshots and the example keepsake
 
 ## Getting started
 
-1. Clone or download this repo.
+1. Download `baby-registry-template.zip` from the [latest release](../../releases/latest) and unzip it, or clone this repo.
 2. Open **`config/registry.json`** in a text editor. Everything you need to change is in there:
    - Your names, the baby's last name and the due date
    - The access code (change it from `123456`!)
@@ -188,11 +188,9 @@ Removing an item from the gift list doesn't delete anyone's purchase, so it's sa
 
 ---
 
-## Hosting without a server
+## Can I use GitHub Pages or Netlify?
 
-The full registry **can't run on GitHub Pages, Cloudflare Pages or Netlify** on their own, because those only serve static files and the registry needs its server to save purchases, guesses and scores for everyone.
-
-What you *can* put on a static host is `demo.html`. For example, turn on GitHub Pages for this repo and the demo will be at `https://<your-username>.github.io/<repo-name>/demo.html`.
+Not for the real registry. Those only serve static files, and the registry needs its small server to save purchases, guesses and scores so every guest sees the same thing. `demo.html` is the only part that works without a server, and it's meant to be downloaded and opened on your own computer.
 
 ---
 
