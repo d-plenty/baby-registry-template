@@ -1,0 +1,1098 @@
+{
+  "_readme": [
+    "PUBLIC TEMPLATE. Replace everything in [square brackets] with your own details, change \"accessCode\" to your own code (4 to 10 digits), and swap the photos in config/photos for your own.",
+    "Example dates are used throughout: set \"openingDate\" (unwrapping day) and the date game's \"due\", \"min\" and \"max\" to your own.",
+    "This file holds the site's settings and the gift list. Edit it any time; the site picks up changes within a few seconds.",
+    "Keep the quotes, commas and brackets exactly as they are. If the file has a mistake, the site keeps using the last good version and logs the problem.",
+    "NEVER change an item's \"id\" once people have started buying. Purchases are linked to the id. Everything else about an item can change.",
+    "To reveal a game's answer, fill in its value under \"results\" (see the formats below). Guessing for that game closes and the winner is shown."
+  ],
+  "accessCode": "123456",
+  "parents": "[Couple's names] are welcoming",
+  "blockWord": "BABY",
+  "babyName": "[Baby's last name]",
+  "siteAddress": "[your-site-address]",
+  "currency": "AUD",
+  "parcelName": "[Name on the parcel]",
+  "addressLines": [
+    "[Street address]",
+    "[Suburb STATE Postcode]"
+  ],
+  "openingDate": "2027-05-01",
+  "facebookGroupUrl": "",
+  "charity": {
+    "name": "[Charity name]",
+    "about": "[A sentence or two about the charity you're supporting and what it does.]",
+    "website": "https://example.org/",
+    "donateUrl": ""
+  },
+  "_resultsFormats": "sex: \"boy\"/\"girl\" · name: \"Name 1\" (the name you chose, as written in the list) · date: \"2027-03-04\" · weight: 3.42 · length: 51 · time: \"14:35\" · hair: \"bald\"/\"fuzz\"/\"full\" · hairColour: \"brown\"/\"red\"/\"other\" · looks: \"parent1\"/\"parent2\"/\"both\"/\"jellybean\"",
+  "results": {
+    "sex": null,
+    "name": null,
+    "date": null,
+    "weight": null,
+    "length": null,
+    "time": null,
+    "hair": null,
+    "hairColour": null,
+    "looks": null
+  },
+  "prizes": {
+    "overall": [
+      "🏅 A framed bragging rights certificate",
+      "📸 A portrait of baby wearing a T-shirt with your photo on it",
+      "👣 Baby's stamped footprint",
+      "☕ A mug with a photo of baby's stamped footprint"
+    ],
+    "category": "📷 A small photo of baby with baby's footprint on it"
+  },
+  "categories": {
+    "sleep": {
+      "label": "Sleep",
+      "colour": "lilac"
+    },
+    "out": {
+      "label": "Out & about",
+      "colour": "sky"
+    },
+    "feeding": {
+      "label": "Feeding",
+      "colour": "sun"
+    },
+    "bath": {
+      "label": "Bath & change",
+      "colour": "aqua"
+    },
+    "clothes": {
+      "label": "Clothing",
+      "colour": "pink"
+    },
+    "play": {
+      "label": "Play & books",
+      "colour": "peach"
+    },
+    "health": {
+      "label": "Health & care",
+      "colour": "mint"
+    },
+    "vouchers": {
+      "label": "Vouchers",
+      "colour": "lime"
+    }
+  },
+  "items": [
+    {
+      "id": "cot",
+      "name": "Cot",
+      "category": "sleep",
+      "qty": 1,
+      "emoji": "🛏️",
+      "icon": "crib",
+      "note": "Must meet the Australian standard (AS/NZS 2172).",
+      "links": []
+    },
+    {
+      "id": "co-sleeper",
+      "name": "Co-sleeper / play pen",
+      "category": "sleep",
+      "qty": 1,
+      "emoji": "🛏️",
+      "icon": "fence-two",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "mattress-protector",
+      "name": "Cot mattress protector",
+      "category": "sleep",
+      "qty": 2,
+      "emoji": "☁️",
+      "icon": "single-bed",
+      "note": "Waterproof, to fit a standard cot mattress.",
+      "links": []
+    },
+    {
+      "id": "cot-sheets",
+      "name": "Cot sheets",
+      "category": "sleep",
+      "qty": 4,
+      "emoji": "🛌",
+      "icon": "sleep-two",
+      "note": "Fitted cot sheets.",
+      "links": []
+    },
+    {
+      "id": "swaddle",
+      "name": "Swaddles",
+      "category": "sleep",
+      "qty": 6,
+      "emoji": "🌈",
+      "icon": "swaddle",
+      "note": "Light muslin is best. Single wraps or packs are both fine.",
+      "links": []
+    },
+    {
+      "id": "baby-blankets",
+      "name": "Baby blankets",
+      "category": "sleep",
+      "qty": 6,
+      "emoji": "🧸",
+      "icon": "blanket",
+      "note": "Light cotton or cellular blankets are great.",
+      "links": []
+    },
+    {
+      "id": "mobile",
+      "name": "Cot mobile",
+      "category": "sleep",
+      "qty": 1,
+      "emoji": "🎐",
+      "icon": "baby-mobile",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "night-light",
+      "name": "Night light",
+      "category": "sleep",
+      "qty": 1,
+      "emoji": "🌟",
+      "icon": "moon",
+      "note": "Soft and dim for night feeds.",
+      "links": []
+    },
+    {
+      "id": "singlets-0000",
+      "name": "Singlets, size 0000",
+      "category": "clothes",
+      "emoji": "🎽",
+      "icon": "singlet",
+      "note": "Sleeveless or short-sleeve, to layer under sleepsuits for warmth.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "singlets-000",
+      "name": "Singlets, size 000",
+      "category": "clothes",
+      "emoji": "🎽",
+      "icon": "singlet",
+      "note": "Sleeveless or short-sleeve, to layer under sleepsuits for warmth.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "singlets-00",
+      "name": "Singlets, size 00",
+      "category": "clothes",
+      "emoji": "🎽",
+      "icon": "singlet",
+      "note": "Sleeveless or short-sleeve, to layer under sleepsuits for warmth.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "singlets-0",
+      "name": "Singlets, size 0",
+      "category": "clothes",
+      "emoji": "🎽",
+      "icon": "singlet",
+      "note": "Sleeveless or short-sleeve, to layer under sleepsuits for warmth.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "bodysuits-0000",
+      "name": "Bodysuits, size 0000",
+      "category": "clothes",
+      "emoji": "👶",
+      "icon": "bodysuit",
+      "note": "Short-sleeve bodysuits.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "bodysuits-000",
+      "name": "Bodysuits, size 000",
+      "category": "clothes",
+      "emoji": "👶",
+      "icon": "bodysuit",
+      "note": "Short-sleeve bodysuits.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "bodysuits-00",
+      "name": "Bodysuits, size 00",
+      "category": "clothes",
+      "emoji": "👶",
+      "icon": "bodysuit",
+      "note": "Short-sleeve bodysuits.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "bodysuits-0",
+      "name": "Bodysuits, size 0",
+      "category": "clothes",
+      "emoji": "👶",
+      "icon": "bodysuit",
+      "note": "Short-sleeve bodysuits.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "sleepsuits-0000",
+      "name": "Sleepsuits, size 0000",
+      "category": "clothes",
+      "emoji": "🌙",
+      "icon": "sleepsuit",
+      "note": "Zip-up sleepsuits or footies.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "sleepsuits-000",
+      "name": "Sleepsuits, size 000",
+      "category": "clothes",
+      "emoji": "🌙",
+      "icon": "sleepsuit",
+      "note": "Zip-up sleepsuits or footies.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "sleepsuits-00",
+      "name": "Sleepsuits, size 00",
+      "category": "clothes",
+      "emoji": "🌙",
+      "icon": "sleepsuit",
+      "note": "Zip-up sleepsuits or footies.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "sleepsuits-0",
+      "name": "Sleepsuits, size 0",
+      "category": "clothes",
+      "emoji": "🌙",
+      "icon": "sleepsuit",
+      "note": "Zip-up sleepsuits or footies.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "clothes-0000",
+      "name": "Clothes, size 0000",
+      "category": "clothes",
+      "emoji": "🧦",
+      "icon": "socks",
+      "note": "Any style of baby clothes in this size.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "clothes-000",
+      "name": "Clothes, size 000",
+      "category": "clothes",
+      "emoji": "👚",
+      "icon": "t-shirt",
+      "note": "Any style of baby clothes in this size.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "clothes-00",
+      "name": "Clothes, size 00",
+      "category": "clothes",
+      "emoji": "👗",
+      "icon": "short-skirt",
+      "note": "Any style of baby clothes in this size.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "clothes-0",
+      "name": "Clothes, size 0",
+      "category": "clothes",
+      "emoji": "🩳",
+      "icon": "clothes-pants",
+      "note": "Any style of baby clothes in this size.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "nappies-newborn",
+      "name": "Nappies, newborn size",
+      "category": "bath",
+      "emoji": "🧷",
+      "icon": "clothes-diapers",
+      "note": "Babies grow out of newborn size within a few weeks, so we only need a few boxes.",
+      "qty": 3,
+      "links": []
+    },
+    {
+      "id": "nappies-infant",
+      "name": "Nappies, infant size",
+      "category": "bath",
+      "emoji": "🧷",
+      "icon": "diapers-one",
+      "note": "We'll go through plenty of these!",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "wipes",
+      "name": "Baby wipes",
+      "category": "bath",
+      "emoji": "🧻",
+      "icon": "wipes",
+      "note": "Fragrance-free and chemical-free, please.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "nappy-cream",
+      "name": "Nappy cream",
+      "category": "bath",
+      "qty": 2,
+      "emoji": "🧴",
+      "icon": "lotion",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "cream-spatula",
+      "name": "Nappy cream spatula",
+      "category": "bath",
+      "qty": 1,
+      "emoji": "🥄",
+      "icon": "spatula",
+      "note": "Soft silicone, please.",
+      "links": []
+    },
+    {
+      "id": "change-table",
+      "name": "Change table",
+      "category": "bath",
+      "qty": 1,
+      "emoji": "🚼",
+      "icon": "bedside",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "change-liners",
+      "name": "Change table liners",
+      "category": "bath",
+      "qty": 3,
+      "emoji": "🌸",
+      "icon": "pad",
+      "note": "Covers or packs of disposable liners are both great.",
+      "links": []
+    },
+    {
+      "id": "nappy-bin",
+      "name": "Nappy bin",
+      "category": "bath",
+      "qty": 1,
+      "emoji": "🗑️",
+      "icon": "delete",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "nappy-bin-refills",
+      "name": "Nappy bin refills",
+      "category": "bath",
+      "emoji": "📦",
+      "icon": "box",
+      "note": "Refills to suit the nappy bin.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "baby-bath",
+      "name": "Baby bath",
+      "category": "bath",
+      "qty": 1,
+      "emoji": "🛁",
+      "icon": "baby-bath",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "bath-thermometer",
+      "name": "Bath thermometer",
+      "category": "bath",
+      "qty": 1,
+      "emoji": "🌡️",
+      "icon": "thermometer",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "bath-toys",
+      "name": "Bath toys",
+      "category": "bath",
+      "emoji": "🦆",
+      "icon": "duck",
+      "note": "",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "hooded-towels",
+      "name": "Hooded towels",
+      "category": "bath",
+      "qty": 3,
+      "emoji": "🐥",
+      "icon": "towel",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "wash-cloths",
+      "name": "Baby wash cloths",
+      "category": "bath",
+      "qty": 2,
+      "emoji": "🧽",
+      "icon": "handwashing",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "bottles",
+      "name": "Bottles",
+      "category": "feeding",
+      "qty": 6,
+      "emoji": "🍼",
+      "icon": "baby-bottle",
+      "note": "6 bottles in total. Buying a pack? Count each bottle (a 3 pack counts as 3).",
+      "links": []
+    },
+    {
+      "id": "bottle-brushes",
+      "name": "Baby bottle brush set",
+      "category": "feeding",
+      "qty": 2,
+      "emoji": "🪥",
+      "icon": "hair-brush",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "bottle-sanitiser",
+      "name": "Electric steam steriliser",
+      "category": "feeding",
+      "qty": 1,
+      "emoji": "♨️",
+      "icon": "soap-bubble",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "dummies",
+      "name": "Dummies",
+      "category": "feeding",
+      "emoji": "🍭",
+      "icon": "dummy",
+      "note": "Packs of 2, newborn (0 to 6 months) size. Babies can be fussy, so different brands are great.",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "bibs",
+      "name": "Baby bibs",
+      "category": "feeding",
+      "emoji": "🧣",
+      "icon": "bib",
+      "note": "",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "burp-cloths",
+      "name": "Burp cloths",
+      "category": "feeding",
+      "emoji": "🫧",
+      "icon": "burp-cloth",
+      "note": "",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "high-chair",
+      "name": "High chair",
+      "category": "feeding",
+      "qty": 1,
+      "emoji": "🪑",
+      "icon": "chair",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "pram",
+      "name": "Pram / stroller",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🛞",
+      "icon": "boy-stroller",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "bassinet",
+      "name": "Pram bassinet",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🧺",
+      "icon": "bassinet",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "capsule-adapters",
+      "name": "Capsule adapters",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🔗",
+      "icon": "link-two",
+      "note": "To fit the baby capsule to the pram.",
+      "links": []
+    },
+    {
+      "id": "pram-clips",
+      "name": "Pram clips",
+      "category": "out",
+      "qty": 1,
+      "emoji": "📎",
+      "icon": "paperclip",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "pram-bag-clips",
+      "name": "Pram bag clips",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🪝",
+      "icon": "hanger",
+      "note": "For hanging bags off the pram.",
+      "links": []
+    },
+    {
+      "id": "pram-rain-cover",
+      "name": "Pram rain cover",
+      "category": "out",
+      "qty": 1,
+      "emoji": "☔",
+      "icon": "umbrella",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "pram-liners",
+      "name": "Pram liners",
+      "category": "out",
+      "qty": 2,
+      "emoji": "🌼",
+      "icon": "pad",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "car-seat",
+      "name": "Car seat",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🚗",
+      "icon": "baby-car-seat",
+      "note": "Must be new and meet AS/NZS 1754.",
+      "links": []
+    },
+    {
+      "id": "car-seat-guard",
+      "name": "Car seat guard",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🛡️",
+      "icon": "protect",
+      "note": "Goes under the car seat to protect the car's upholstery.",
+      "links": []
+    },
+    {
+      "id": "car-mirror",
+      "name": "Car mirror",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🪞",
+      "icon": "mirror",
+      "note": "So we can see bub in the back seat.",
+      "links": []
+    },
+    {
+      "id": "kick-mats",
+      "name": "Back seat kick mat / organiser",
+      "category": "out",
+      "qty": 1,
+      "emoji": "👟",
+      "icon": "car",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "baby-carrier",
+      "name": "Baby carrier",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🦘",
+      "icon": "baby-sling",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "change-mat",
+      "name": "Portable nappy change mat",
+      "category": "out",
+      "qty": 1,
+      "emoji": "🎒",
+      "icon": "handbag",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "play-mat",
+      "name": "Play mat",
+      "category": "play",
+      "qty": 1,
+      "emoji": "🧩",
+      "icon": "puzzle",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "soft-play-mat",
+      "name": "Soft play mat",
+      "category": "play",
+      "qty": 1,
+      "emoji": "🧸",
+      "icon": "pad",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "tummy-time-mat",
+      "name": "Tummy time mat",
+      "category": "play",
+      "qty": 1,
+      "emoji": "🐢",
+      "icon": "baby-one",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "books",
+      "name": "Kids books",
+      "category": "play",
+      "emoji": "📚",
+      "icon": "book-open",
+      "note": "Write a little note inside the cover!",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "sensory-toys",
+      "name": "Toys / sensory toys",
+      "category": "play",
+      "emoji": "🐙",
+      "icon": "rattle",
+      "note": "",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "teething-toys",
+      "name": "Teething toys",
+      "category": "play",
+      "emoji": "🦷",
+      "icon": "teeth",
+      "note": "",
+      "unlimited": true,
+      "links": []
+    },
+    {
+      "id": "baby-thermometer",
+      "name": "Baby thermometer",
+      "category": "health",
+      "qty": 1,
+      "emoji": "🌡️",
+      "icon": "thermometer-one",
+      "note": "Forehead or oral.",
+      "links": []
+    },
+    {
+      "id": "first-aid",
+      "name": "Baby first aid kit",
+      "category": "health",
+      "qty": 1,
+      "emoji": "🩹",
+      "icon": "medical-box",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "manicure-kit",
+      "name": "Baby manicure kit",
+      "category": "health",
+      "qty": 1,
+      "emoji": "💅",
+      "icon": "scissors",
+      "note": "",
+      "links": []
+    },
+    {
+      "id": "gift-cards",
+      "name": "Gift cards / vouchers",
+      "category": "vouchers",
+      "emoji": "🎁",
+      "icon": "gift-card",
+      "note": "Any shop. Perfect if you're not sure what to get!",
+      "unlimited": true,
+      "links": []
+    }
+  ],
+  "games": [
+    {
+      "id": "sex",
+      "type": "choice",
+      "emoji": "🎀",
+      "colour": "lilac",
+      "title": "Boy or girl?",
+      "wide": true,
+      "options": [
+        {
+          "v": "boy",
+          "label": "Boy",
+          "emoji": "💙",
+          "colour": "sky"
+        },
+        {
+          "v": "girl",
+          "label": "Girl",
+          "emoji": "💗",
+          "colour": "pink"
+        }
+      ]
+    },
+    {
+      "id": "boyName",
+      "type": "choice",
+      "nameFor": "boy",
+      "emoji": "💙",
+      "colour": "sky",
+      "title": "If it's a boy…",
+      "chart": "top",
+      "hint": "Which name do you think we'll pick? Tap one.",
+      "options": [
+        {
+          "v": "boy-name-1",
+          "label": "[Boy name 1]"
+        },
+        {
+          "v": "boy-name-2",
+          "label": "[Boy name 2]"
+        },
+        {
+          "v": "boy-name-3",
+          "label": "[Boy name 3]"
+        },
+        {
+          "v": "boy-name-4",
+          "label": "[Boy name 4]"
+        },
+        {
+          "v": "boy-name-5",
+          "label": "[Boy name 5]"
+        },
+        {
+          "v": "boy-name-6",
+          "label": "[Boy name 6]"
+        },
+        {
+          "v": "unisex-name-1",
+          "label": "[Unisex name 1]",
+          "group": "Unisex"
+        },
+        {
+          "v": "unisex-name-2",
+          "label": "[Unisex name 2]",
+          "group": "Unisex"
+        }
+      ]
+    },
+    {
+      "id": "girlName",
+      "type": "choice",
+      "nameFor": "girl",
+      "emoji": "💗",
+      "colour": "pink",
+      "title": "If it's a girl…",
+      "chart": "top",
+      "hint": "Which name do you think we'll pick? Tap one.",
+      "options": [
+        {
+          "v": "girl-name-1",
+          "label": "[Girl name 1]"
+        },
+        {
+          "v": "girl-name-2",
+          "label": "[Girl name 2]"
+        },
+        {
+          "v": "girl-name-3",
+          "label": "[Girl name 3]"
+        },
+        {
+          "v": "girl-name-4",
+          "label": "[Girl name 4]"
+        },
+        {
+          "v": "girl-name-5",
+          "label": "[Girl name 5]"
+        },
+        {
+          "v": "girl-name-6",
+          "label": "[Girl name 6]"
+        },
+        {
+          "v": "unisex-name-1",
+          "label": "[Unisex name 1]",
+          "group": "Unisex"
+        },
+        {
+          "v": "unisex-name-2",
+          "label": "[Unisex name 2]",
+          "group": "Unisex"
+        }
+      ]
+    },
+    {
+      "id": "date",
+      "type": "date",
+      "emoji": "📅",
+      "colour": "peach",
+      "title": "When will baby arrive?",
+      "wide": true,
+      "due": "2027-07-01",
+      "min": "2027-05-15",
+      "max": "2027-08-15",
+      "hint": "Due on [due date], but babies keep their own calendar."
+    },
+    {
+      "id": "time",
+      "type": "time",
+      "emoji": "⏰",
+      "colour": "aqua",
+      "title": "What time of day?",
+      "wide": true,
+      "hint": "Pick the half hour you think baby will arrive."
+    },
+    {
+      "id": "weight",
+      "type": "number",
+      "emoji": "⚖️",
+      "colour": "mint",
+      "title": "How heavy?",
+      "unit": "kg",
+      "min": 2,
+      "max": 5,
+      "step": 0.01,
+      "placeholder": "3.40",
+      "bin": 0.25,
+      "binMin": 2,
+      "binMax": 5,
+      "hint": "Anything from 2 to 5 kg (4 lb 7 oz to 11 lb). Use kg or lb & oz, whichever you know."
+    },
+    {
+      "id": "length",
+      "type": "number",
+      "emoji": "📏",
+      "colour": "sun",
+      "title": "How long?",
+      "unit": "cm",
+      "min": 42,
+      "max": 60,
+      "step": 0.1,
+      "placeholder": "51",
+      "bin": 2,
+      "binMin": 42,
+      "binMax": 60,
+      "hint": "Head to toe, anything from 42 to 60 cm (16.5 to 23.6 in). Use cm or inches."
+    },
+    {
+      "id": "hair",
+      "type": "choice",
+      "emoji": "💇",
+      "colour": "lime",
+      "title": "How much hair?",
+      "options": [
+        {
+          "v": "bald",
+          "label": "Bald as an egg",
+          "emoji": "🥚"
+        },
+        {
+          "v": "fuzz",
+          "label": "A little fuzz",
+          "emoji": "🐣"
+        },
+        {
+          "v": "full",
+          "label": "Full head of hair",
+          "emoji": "🦁"
+        }
+      ]
+    },
+    {
+      "id": "hairColour",
+      "type": "choice",
+      "emoji": "🎨",
+      "colour": "pink",
+      "title": "What hair colour?",
+      "options": [
+        {
+          "v": "brown",
+          "label": "Brown",
+          "emoji": "🤎"
+        },
+        {
+          "v": "red",
+          "label": "Red",
+          "emoji": "🧡"
+        },
+        {
+          "v": "other",
+          "label": "Something else",
+          "emoji": "🌈"
+        }
+      ]
+    },
+    {
+      "id": "looks",
+      "type": "choice",
+      "emoji": "👀",
+      "colour": "lilac",
+      "title": "Who will baby look like?",
+      "wide": true,
+      "options": [
+        {
+          "v": "parent1",
+          "label": "[Parent 1]",
+          "emoji": "🧔"
+        },
+        {
+          "v": "parent2",
+          "label": "[Parent 2]",
+          "emoji": "👩"
+        },
+        {
+          "v": "both",
+          "label": "A perfect mix",
+          "emoji": "🤝"
+        },
+        {
+          "v": "jellybean",
+          "label": "A jelly bean",
+          "emoji": "🍬"
+        }
+      ]
+    }
+  ],
+  "story": {
+    "title": "Our story so far",
+    "intro": "[A line or two about your story so far.]",
+    "welcome": [
+      "couple-1.jpg",
+      "couple-3.jpg",
+      "couple-5.jpg"
+    ],
+    "chapters": [
+      {
+        "title": "The two of us",
+        "date": "[Together since …]",
+        "text": "[How you met and how long you've been together.]",
+        "photos": [
+          {
+            "file": "couple-1.jpg"
+          },
+          {
+            "file": "couple-2.jpg"
+          },
+          {
+            "file": "couple-3.jpg"
+          },
+          {
+            "file": "couple-4.jpg"
+          },
+          {
+            "file": "couple-5.jpg"
+          },
+          {
+            "file": "couple-6.jpg"
+          }
+        ]
+      },
+      {
+        "title": "The big news",
+        "date": "[Due date]",
+        "text": "[Your baby announcement.]",
+        "photos": [
+          {
+            "file": "couple-1.jpg",
+            "caption": "Coming soon!"
+          },
+          {
+            "file": "couple-2.jpg"
+          },
+          {
+            "file": "couple-3.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Growing every week",
+        "text": "[A line about the bump.]",
+        "photos": [
+          {
+            "file": "couple-4.jpg"
+          },
+          {
+            "file": "couple-5.jpg"
+          },
+          {
+            "file": "couple-6.jpg"
+          }
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "emoji": "📍",
+        "title": "Where we met",
+        "detail": "[Place you met]"
+      },
+      {
+        "emoji": "💕",
+        "title": "Together since",
+        "detail": "[Date you got together]"
+      },
+      {
+        "emoji": "🍼",
+        "title": "Baby due",
+        "detail": "[Due date]"
+      }
+    ]
+  }
+}

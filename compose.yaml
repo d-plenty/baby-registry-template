@@ -1,0 +1,36 @@
+services:
+  baby-registry:
+    image: node:22-alpine
+    container_name: baby-registry
+    restart: unless-stopped
+    user: "568:568"                      # TrueNAS "apps" user, so it can write to the data folder
+    working_dir: /app
+    command: ["node", "server.js"]
+    environment:
+      TZ: Australia/Brisbane            # change to your time zone
+      PORT: "3000"
+      CONFIG_FILE: /config/registry.json
+      DATA_DIR: /data
+    volumes:
+      # The website code. Read-only: the container can't change it.
+      - /mnt/your-pool/baby-registry/app:/app:ro
+      # Settings and gift list. Edit this file on the NAS; the site reloads it by itself.
+      - /mnt/your-pool/baby-registry/config:/config:ro
+      # Everyone's purchases, guesses and donations, plus hourly backups.
+      # This folder is never inside the container, so stopping, updating or
+      # deleting the container can't touch it.
+      - /mnt/your-pool/baby-registry/data:/data
+    ports:
+      - "3480:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    stop_grace_period: 15s               # lets any save in progress finish before stopping
+    mem_limit: 256m
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
