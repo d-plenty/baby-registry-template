@@ -146,4 +146,4 @@ Ideas, fixes and pull requests are welcome. If you use this for your own little 
 
 ## Licence
 
-MIT. Free to use, modify and share. See [LICENSE](LICENSE).
+GPL-3.0. You're free to use, change and share it. If you share a changed version, it has to stay open source under the same licence. See [LICENSE](LICENSE).
