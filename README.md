@@ -102,4 +102,4 @@ Ideas, fixes and pull requests are welcome. If you use this for your own little 
 
 ## Licence
 
-MIT. Free to use, modify and share.
+GPL-3.0. Free to use, modify and share. If you distribute a modified version, it must also be released under GPL-3.0 with its source available. See [LICENSE](LICENSE) for details.
